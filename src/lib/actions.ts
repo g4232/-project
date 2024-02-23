@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 import  {HttpsProxyAgent} from "https-proxy-agent"
 const httpsAgant = new HttpsProxyAgent("http://127.0.0.1:10809")
-const openai = new OpenAI({apiKey:"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",httpAgent:httpsAgant})
+const openai = new OpenAI({apiKey:process.env.OPENAI_API_KEY,httpAgent:httpsAgant})
 
 export const OpenaiService =async (content:string)=>{
    const completion = await openai.chat.completions.create({
@@ -12,3 +12,6 @@ export const OpenaiService =async (content:string)=>{
 
   return  completion.choices[0].message;
   }
+export const convertPdfToDocx = async (pdfFile:string,docFile:string)=>{
+
+}

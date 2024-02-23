@@ -16,7 +16,7 @@ const nav = [
   },
   {
     link: '/about',
-    title: 'about',
+    title: 'files',
     icon: <SiAboutdotme />
   },
   {
